@@ -2,21 +2,41 @@ document.addEventListener('DOMContentLoaded', function() {
     
     initHeaderScroll();
     
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            filterProjects(filterValue);
+        });
+    });
+    
+    // Function to filter projects based on the selected category
+    function filterProjects(category) {
+        projectItems.forEach(item => {
+            
+            const projectCategory = item.getAttribute('data-category');
+            
+            if (category === 'all' || category === projectCategory) {
+                item.style.display = 'block';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 50);
+
+            } else {
+                
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
 });
 
-/**
- * Header scroll effect - changes header appearance on scroll
- */
-function initHeaderScroll() {
-    const header = document.querySelector('header');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.style.height = '60px';
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.height = '80px';
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
-        }
-    });
-}
