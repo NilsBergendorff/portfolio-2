@@ -7,20 +7,39 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/portfolio.css">
     <script src="js/portfolio.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
+    <div class="fade-layer" ></div>
     <header>
         <div class="container">
             <div class="logo">
                 <h1>My Portfolio</h1>
             </div>
-            <nav>
+            <nav class="menudator">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="portfolio.html" class="active">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+            </nav>
+
+            <nav class="menumobil">         
+                <div class="menu-button">
+                <i class="material-icons" >menu </i></div>
+          
+                <div class="close" >
+                <i class="material-icons" >close</i></div> 
+                <div class="menu">
+                  <ul class="navlist">
+                    <li class="navlink"><a href="index.html" class="navtext">Hem</a></li>
+                    <li class="navlink"><a href="contact.html" class="navtext">Contact</a></li>
+                    <li class="navlink"><a href="about.html" class="navtext">About</li>
+                    <li class="navlink"><a href="portfolio.html" class="navtext">Portfolio</a></li>
+                  </ul>
+                </div>
             </nav>
         </div>
     </header>

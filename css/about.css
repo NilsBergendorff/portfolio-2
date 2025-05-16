@@ -4,6 +4,75 @@
   box-sizing: border-box;
 }
 
+
+.menu{
+  height: 25vh;
+  width: 30vw;
+  background:rgba(255, 255, 255);
+  position: fixed;   
+  right: -90vw;
+  transition: right 0.3s;
+  box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 50px 10px;
+  align-content: center;
+}
+
+.navlist{
+
+    display: flex;
+    flex-direction: column  ;
+    list-style-type: none;
+    gap: 1vh;
+}
+
+.menu-button{
+  cursor: pointer;
+  display: inline;
+}
+.close{
+  cursor: pointer;
+  z-index: 11; 
+  display: none;
+
+}
+.close i.material-icons{
+  font-size: 7vh;
+  background-color: var(--navfarg);
+}
+.menu-button i.material-icons{
+  font-size: 7vh;  
+  
+  
+}
+.invisible{
+  display: none;
+}
+.show{
+  right: 0;
+}
+.fade-layer{
+  position: fixed;
+  
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1000;
+  height: 150%;
+  
+}
+.close.visible{
+  display: block;
+}
+
+.fade-layer.visible{
+  display: block;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -71,6 +140,7 @@ ul {
   left: 0;
   width: 100%;
   z-index: 1000;
+
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: var(--box-shadow);
   backdrop-filter: blur(10px);
@@ -333,4 +403,19 @@ nav ul li a.active {
     text-align: center;
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.7);
+  }
+
+  @media (min-width: 500px){
+
+    .menumobil{
+        display: none;
+    }
+  }
+
+  @media (max-width: 500px){
+
+    .menudator{
+        display: none;
+    }
+
   }
